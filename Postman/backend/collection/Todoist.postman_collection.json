@@ -1,0 +1,826 @@
+{
+	"info": {
+		"_postman_id": "c1adcb2a-5f24-4ffb-bb84-720916ba2968",
+		"name": "Todoist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PROJECT",
+			"item": [
+				{
+					"name": "PositiveScenarios",
+					"item": [
+						{
+							"name": "Create task",
+							"item": [
+								{
+									"name": "Create a new task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"    var jsonData = pm.response.json();\r",
+													"    var name = pm.environment.get(\"taskName\");\r",
+													"\r",
+													"    pm.test(\"Task name is correct.\", function () {\r",
+													"    pm.expect(jsonData.content).to.eql(name);\r",
+													"});\r",
+													"\r",
+													"pm.environment.set(\"taskId\", jsonData.id);\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"{{taskName}}\",\r\n    \"due_string\": \"03/21/2021 at 12:00\",\r\n    \"due_lang\": \"en\",\r\n    \"priority\": 4\r\n}"
+										},
+										"url": {
+											"raw": "{{baseURL}}",
+											"host": [
+												"{{baseURL}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get Task",
+							"item": [
+								{
+									"name": "Get task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"    var id = pm.environment.get(\"taskId\");\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Task ID is correct.\", function () {\r",
+													"    pm.expect(jsonData.id).to.eql(id);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Validate squema",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"var x = pm.environment.get(\"Squema\");\r",
+													"\r",
+													"pm.test(\"Validate schema\", () => {\r",
+													"    pm.response.to.have.jsonSchema(x);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get active task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}",
+											"host": [
+												"{{baseURL}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Update task",
+							"item": [
+								{
+									"name": "Update task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"content\": \"Buy Coffee\"}"
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Close task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}/close",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}",
+												"close"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Reopen task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}/reopen",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}",
+												"reopen"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Delete task",
+							"item": [
+								{
+									"name": "Delete task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 2xx\", function () {",
+									"    pm.response.to.be.success;",
+									"});",
+									"",
+									"const schema1 = {",
+									"    \"type\": \"object\",",
+									"    \"properties\": {",
+									"        \"id\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"assigner\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"project_id\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"section_id\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"order\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"content\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"completed\": {",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"label_ids\": {",
+									"            \"type\": \"array\",",
+									"            \"additionalItems\": false",
+									"        },",
+									"        \"priority\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"comment_count\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"creator\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"created\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"due\": {",
+									"            \"type\": \"object\",",
+									"            \"required\": [],",
+									"            \"properties\": {",
+									"                \"recurring\": {",
+									"                    \"type\": \"boolean\"",
+									"                },",
+									"                \"string\": {",
+									"                    \"type\": \"string\"",
+									"                },",
+									"                \"date\": {",
+									"                    \"type\": \"string\"",
+									"                },",
+									"                \"datetime\": {",
+									"                    \"type\": \"string\"",
+									"                },",
+									"                \"timezone\": {",
+									"                    \"type\": \"string\"",
+									"                }",
+									"            },",
+									"            \"additionalProperties\": false",
+									"        },",
+									"        \"url\": {",
+									"            \"type\": \"string\"",
+									"        }",
+									"    },",
+									"    \"additionalProperties\": false",
+									"}",
+									"",
+									"pm.environment.set(\"Squema\", schema1);",
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "NegativeScenarios",
+					"item": [
+						{
+							"name": "Create task",
+							"item": [
+								{
+									"name": "Create task without Body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseURL}}",
+											"host": [
+												"{{baseURL}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get task",
+							"item": [
+								{
+									"name": "Get task without id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get active with body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}",
+											"host": [
+												"{{baseURL}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Update task",
+							"item": [
+								{
+									"name": "Update task wrong variable in JSON",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"conten\": \"Buy Coffee\"}"
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Close task wrong URL",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "X-Requested-Id",
+												"value": "$(uuidgen)",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}/clos",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}",
+												"clos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Reopen task without headers",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseURL}}/{{taskId}}/reopen",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"{{taskId}}",
+												"reopen"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Delete task",
+							"item": [
+								{
+									"name": "Delete task wrong Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseURL}}/12345",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"12345"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status of request is diferent to OK\", function () {",
+									"    var status = pm.response.status;",
+									"",
+									"    pm.expect(status).not.eq(\"OK\");",
+									"});"
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "26c9ec2580db442bd4abd62a1fbe75361473e5fc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var time =  pm.environment.get(\"responseTime\");",
+					"time = parseInt(time);",
+					"",
+					"pm.test(\"Response time is less than \"+time+\"ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(time);",
+					"});"
+				]
+			}
+		}
+	]
+}

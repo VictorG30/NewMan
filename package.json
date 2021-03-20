@@ -1,0 +1,11 @@
+{
+  "name": "newman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html"
+  },
+  "author": "VictorG",
+  "license": "ISC"
+}
