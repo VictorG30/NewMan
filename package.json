@@ -7,5 +7,9 @@
     "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html"
   },
   "author": "VictorG",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
