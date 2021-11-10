@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html"
+    "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html",
+    "API": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'"
   },
   "author": "VictorG",
   "license": "ISC",

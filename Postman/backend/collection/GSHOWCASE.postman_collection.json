@@ -1,0 +1,1364 @@
+{
+	"info": {
+		"_postman_id": "82efc16a-9aae-400e-a2d8-7549d6c83e79",
+		"name": "GSHOWCASE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SmokeTest HappyPath",
+			"item": [
+				{
+					"name": "Single Story Bullets",
+					"item": [
+						{
+							"name": "Ingest Single Story Bullets",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var isodate = new Date().toISOString()",
+											"pm.environment.set(\"date\", isodate);",
+											"",
+											"var id = pm.environment.get(\"idPanel\");",
+											"var a = parseInt(id);",
+											"",
+											"var idfin = a + 1;",
+											"pm.environment.set(\"idPanel\", idfin);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{ingestion-api-key}}",
+										"description": "Default GCAPINP dev Ingestion ApiKey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"{{idPanel}}-{{source}}\",\n    \"createdDate\": \"{{date}}\",\n    \"updatedDate\": \"{{date}}\",\n    \"publisher\":\"{{source}}\",\n    \"content\": \"<entry><id>https://www.{{source}}.co.uk/money/15395677/single-first-time-home-buyer-tips/?id={{idPanel}}</id><published>{{date}}</published><updated>{{date}}</updated><g:panel type=\\\"SINGLE_STORY\\\">https://www.{{source}}.co.uk/money/15395677/single-first-time-home-buyer-tips/?id={{idPanel}}</g:panel><g:panel_title>Six things you need to know if you're a single first-time home</g:panel_title><g:overline>Six things yo</g:overline><title>Six things you need to know if you're a single first-time home buyer</title><author><name>. , : ; ‘ – – _ @ ‘ ‘ \\\" \\\" / \\\\ {{idPanel}}-{{source}} </name></author><link href=\\\"https://www.{{source}}.co.uk/money/15395677/single-first-time-home-buyer-tips/?id={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/77cdfd73bcba8a969accb6ac12cf2856?combo2to1=1200\\\"></media:content><g:bullet_list><g:list_item>Emmerdale spoilers LIVE: Shock affair for David &amp; Victoria plus EastEnders &amp; Coronation Street latest updates</g:list_item><g:list_item>Bullet 2 Bullet 2 {{idPanel}}-{{source}} </g:list_item><g:list_item>Bullet 1 Bullet 1 {{idPanel}}-{{source}} </g:list_item></g:bullet_list></entry>\",\n    \"user\": \"johndue@gmail.com\",\n    \"domain\": \"http://news-showcase-develop.showcase.newspress.app\",\n    \"originalArticle\": [\n      {\n        \"mainArticle\": true,\n        \"gcapiId\": \"d74abab27e11956757d7c91135a98520\",\n        \"title\": \"Six things you need to know if you're a single first-time home buyer\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"836b71c154bee98a446dd5287b93bd78\",\n        \"title\": \"Emmerdale spoilers LIVE: Shock affair for David &amp; Victoria plus EastEnders &amp; Coronation Street latest updates\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"daf38a3883cee4a7bb4c407b70810340\",\n        \"title\": \"Why Nuno Espirito Santo is right man to rebuild Tottenham, even after 67 days and TEN other candidates\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"46a0ed60ca96842537e1a02ca410d029\",\n        \"title\": \"Mum claims tumble dryer sheets are the secret to keeping bugs away in the summer\"\n      }\n    ]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ingestion-url}}/ingest/processors/GSHOWCASE",
+									"protocol": "https",
+									"host": [
+										"{{ingestion-url}}"
+									],
+									"path": [
+										"ingest",
+										"processors",
+										"GSHOWCASE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consume Complete Single Article",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"",
+											"    let responseData = pm.response.json();",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.expect(responseData[0].originId).to.eql(id+\"-\"+source);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/complete/GSHOWCASE/{{idPanel}}-{{source}}",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"complete",
+										"GSHOWCASE",
+										"{{idPanel}}-{{source}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generate Feed to GShowcase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"    var date = pm.environment.get(\"date\");",
+											"",
+											"",
+											"    var responseJson = xml2Json(responseBody);",
+											"    var idxml = responseJson[\"feed\"][\"entry\"][\"id\"];",
+											"    var datexml = responseJson[\"feed\"][\"updated\"];",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.expect(idxml).to.contain(\"=\"+id);",
+											"    });",
+											"",
+											"    pm.test(\"Date updated is correct.\", function () {",
+											"    pm.expect(datexml).to.eq(date);",
+											"    });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/gshowcase?includeBody=true&maxitems=1&searchCategory=/{{source}}/publisher",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"gshowcase"
+									],
+									"query": [
+										{
+											"key": "includeBody",
+											"value": "true"
+										},
+										{
+											"key": "maxitems",
+											"value": "1"
+										},
+										{
+											"key": "searchCategory",
+											"value": "/{{source}}/publisher"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single Story Key Moments",
+					"item": [
+						{
+							"name": "Ingest Single Story Key Moments",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var isodate = new Date().toISOString()",
+											"pm.environment.set(\"date\", isodate);",
+											"",
+											"var id = pm.environment.get(\"idPanel\");",
+											"var a = parseInt(id);",
+											"",
+											"var idfin = a + 1;",
+											"pm.environment.set(\"idPanel\", idfin);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{ingestion-api-key}}",
+										"description": "Default GCAPINP dev Ingestion ApiKey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\n    \"id\": \"{{idPanel}}-{{source}}\",\n    \"createdDate\": \"{{date}}\",\n    \"updatedDate\": \"{{date}}\",\n    \"publisher\":\"{{source}}\",\n    \"content\": \"<entry><id>https://www.{{source}}.co.uk/tvandshowbiz/15413535/maya-jama-pictured-rumours-date-night-ben-simmons/?gid={{idPanel}}</id><published>{{date}}</published><updated>{{date}}</updated><g:panel type=\\\"SINGLE_STORY\\\">https://www.{{source}}.co.uk/tvandshowbiz/15413535/maya-jama-pictured-rumours-date-night-ben-simmons/?gid={{idPanel}}</g:panel><g:panel_title>Maya Jama</g:panel_title><g:overline>Maya Jama pictured</g:overline><title>Maya Jama pictured leaving restaurant with rumoured love interest NBA star Ben Simmons</title><author><name>Dan Cain</name></author><link href=\\\"https://www.{{source}}.co.uk/tvandshowbiz/15413535/maya-jama-pictured-rumours-date-night-ben-simmons/?gid={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/3a4d3b5cfb6acd86ac86a922bc5321cd?combo2to1=1200\\\"></media:content><g:timeline><g:timeline_item publish_time=\\\"2021-06-28T21:33:16.395Z\\\">Mum-of-22 Sue Radford splashes out on lavish</g:timeline_item><g:timeline_item publish_time=\\\"2021-06-28T21:29:17.315Z\\\">Towie's Georgia Kousoulou praised by fans as she </g:timeline_item><g:timeline_item publish_time=\\\"2021-06-28T21:29:15.783Z\\\">Mum, 33, left homeless after £2.99 B&amp;M wax burner</g:timeline_item></g:timeline></entry>\",\n    \"user\": \"johndue@gmail.com\",\n    \"domain\": \"http://news-showcase-develop.showcase.newspress.app\",\n    \"originalArticle\": [\n      {\n        \"mainArticle\": true,\n        \"gcapiId\": \"e2ba4ac95309ae84ed2b371690541d13\",\n        \"title\": \"Maya Jama pictured leaving restaurant with rumoured love interest NBA star Ben Simmons\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"d8e41fab4a64d2f8b8cb3df45a07dd66\",\n        \"title\": \"Mum-of-22 Sue Radford splashes out on lavish\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"df1eebc071e56405404fb0f7a2b02b79\",\n        \"title\": \"Towie's Georgia Kousoulou praised by fans as she\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"2618864b762942634533c63239abf2fe\",\n        \"title\": \"Mum, 33, left homeless after £2.99 B&M wax burner\"\n      }\n    ]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ingestion-url}}/ingest/processors/GSHOWCASE",
+									"protocol": "https",
+									"host": [
+										"{{ingestion-url}}"
+									],
+									"path": [
+										"ingest",
+										"processors",
+										"GSHOWCASE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consume Complete Single Article",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"",
+											"    let responseData = pm.response.json();",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.expect(responseData[0].originId).to.eql(id+\"-\"+source);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/complete/GSHOWCASE/{{idPanel}}-{{source}}",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"complete",
+										"GSHOWCASE",
+										"{{idPanel}}-{{source}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generate Feed to GShowcase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"    var date = pm.environment.get(\"date\");",
+											"",
+											"",
+											"    var responseJson = xml2Json(responseBody);",
+											"    var idxml = responseJson[\"feed\"][\"entry\"][\"id\"];",
+											"    var datexml = responseJson[\"feed\"][\"updated\"];",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.expect(idxml).to.contain(\"=\"+id);",
+											"    });",
+											"",
+											"    pm.test(\"Date updated is correct.\", function () {",
+											"    pm.expect(datexml).to.eq(date);",
+											"    });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/gshowcase?includeBody=true&maxitems=1&searchCategory=/{{source}}/publisher",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"gshowcase"
+									],
+									"query": [
+										{
+											"key": "includeBody",
+											"value": "true"
+										},
+										{
+											"key": "maxitems",
+											"value": "1"
+										},
+										{
+											"key": "searchCategory",
+											"value": "/{{source}}/publisher"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Single Story Related Articles",
+					"item": [
+						{
+							"name": "Ingest Single Story Related Articles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var isodate = new Date().toISOString()",
+											"pm.environment.set(\"date\", isodate);",
+											"",
+											"var id = pm.environment.get(\"idPanel\");",
+											"var a = parseInt(id);",
+											"",
+											"var idfin = a + 1;",
+											"pm.environment.set(\"idPanel\", idfin);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{ingestion-api-key}}",
+										"description": "Default GCAPINP dev Ingestion ApiKey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"{{idPanel}}-{{source}}\",\n    \"createdDate\": \"{{date}}\",\n    \"updatedDate\": \"{{date}}\",\n    \"publisher\": \"{{source}}\",\n    \"content\": \"<entry><id>https://www.{{source}}.co.uk/sport/horseracing/15431577/hamilton-races-delay-camera-crew-fall/?gid={{idPanel}}</id><published>{{date}}</published><updated>{{date}}</updated><g:panel type=\\\"SINGLE_STORY\\\">https://www.{{source}}.co.uk/sport/horseracing/15431577/hamilton-races-delay-camera-crew-fall/?gid={{idPanel}}</g:panel><g:panel_title>Two cameramen in to hospital with 'serious injuries</g:panel_title><g:overline>Two cameramen</g:overline><title>Two cameramen in to hospital with 'serious injuries' after</title><author><name>Callum Jamieson</name></author><link href=\\\"https://www.{{source}}.co.uk/sport/horseracing/15431577/hamilton-races-delay-camera-crew-fall/?gid={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/ab9ed37a6288450b7e9d9eafb97f5b03?combo2to1=1200\\\"></media:content><summary>Two cameramen in to hospital with 'serious injuries</summary><g:article_group role=\\\"RELATED_CONTENT\\\"><entry><id>https://www.{{source}}.co.uk/news/15436912/navy-warship-bomb-test-florida-miami-experts-disagree/?gid={{idPanel}}</id><title>Theory says Navy warship 'bomb test</title><link href=\\\"https://www.{{source}}.co.uk/news/15436912/navy-warship-bomb-test-florida-miami-experts-disagree/?gid={{idPanel}}\\\"/><g:overline>Theory says Navy warship</g:overline><media:content url=\\\"https://content.capi-stage.newscorp.com/images/007109458a60b28a75d1aa27879b1557?combo4to3=1200\\\"></media:content></entry><entry><id>https://www.{{source}}.co.uk/tv/15437080/wendy-williams-slammed-for-dating-married-ray-j/?gid={{idPanel}}</id><title>Wendy Williams slammed for 'dating'</title><link href=\\\"https://www.{{source}}.co.uk/tv/15437080/wendy-williams-slammed-for-dating-married-ray-j/?gid={{idPanel}}\\\"/><g:overline>Wendy Williams slammed</g:overline><media:content url=\\\"https://content.capi-stage.newscorp.com/images/9e95b3858e90fc01d08196f8d8c8f68a?combo4to3=1200\\\"></media:content></entry></g:article_group></entry>\",\n    \"user\": \"johndue@gmail.com\",\n    \"domain\": \"http://news-showcase-develop.showcase.newspress.app\",\n    \"originalArticle\": [\n      {\n        \"mainArticle\": true,\n        \"gcapiId\": \"d8e41fab4a64d2f8b8cb3df45a07dd66\",\n        \"title\": \"Two cameramen in to hospital with 'serious injuries' after\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"df1eebc071e56405404fb0f7a2b02b79\",\n        \"title\": \"Theory says Navy warship 'bomb test\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"2618864b762942634533c63239abf2fe\",\n        \"title\": \"Wendy Williams slammed for 'dating'\"\n      }\n    ]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ingestion-url}}/ingest/processors/GSHOWCASE",
+									"protocol": "https",
+									"host": [
+										"{{ingestion-url}}"
+									],
+									"path": [
+										"ingest",
+										"processors",
+										"GSHOWCASE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consume Complete Single Article",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"",
+											"    let responseData = pm.response.json();",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.expect(responseData[0].originId).to.eql(id+\"-\"+source);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/complete/GSHOWCASE/{{idPanel}}-{{source}}",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"complete",
+										"GSHOWCASE",
+										"{{idPanel}}-{{source}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generate Feed to GShowcase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"    var date = pm.environment.get(\"date\");",
+											"",
+											"",
+											"    var responseJson = xml2Json(responseBody);",
+											"    var idxml = responseJson[\"feed\"][\"entry\"][\"id\"];",
+											"    var datexml = responseJson[\"feed\"][\"updated\"];",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.expect(idxml).to.contain(\"=\"+id);",
+											"    });",
+											"",
+											"    pm.test(\"Date updated is correct.\", function () {",
+											"    pm.expect(datexml).to.eq(date);",
+											"    });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/gshowcase?includeBody=true&maxitems=1&searchCategory=/{{source}}/publisher",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"gshowcase"
+									],
+									"query": [
+										{
+											"key": "includeBody",
+											"value": "true"
+										},
+										{
+											"key": "maxitems",
+											"value": "1"
+										},
+										{
+											"key": "searchCategory",
+											"value": "/{{source}}/publisher"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Rundown",
+					"item": [
+						{
+							"name": "Ingest Rundown",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var isodate = new Date().toISOString()",
+											"pm.environment.set(\"date\", isodate);",
+											"",
+											"var id = pm.environment.get(\"idPanel\");",
+											"var a = parseInt(id);",
+											"",
+											"var idfin = a + 1;",
+											"pm.environment.set(\"idPanel\", idfin);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{ingestion-api-key}}",
+										"description": "Default GCAPINP dev Ingestion ApiKey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "  {\n    \"id\": \"{{idPanel}}-{{source}}\",\n    \"createdDate\": \"{{date}}\",\n    \"updatedDate\": \"{{date}}\",\n    \"publisher\":\"{{source}}\",\n    \"content\": \"<entry><id>https://www.{{source}}.co.uk/money/15384003/lenders-refuse-mortgages-self-employed-seiss/?id={{idPanel}}</id><published>{{date}}</published><updated>{{date}}</updated><g:panel type=\\\"RUNDOWN\\\">https://www.{{source}}.co.uk/money/15384003/lenders-refuse-mortgages-self-employed-seiss/?id={{idPanel}}</g:panel><g:panel_title>How taking a Covid grant could ruin your chances of getting a mortgage</g:panel_title><g:article_group role=\\\"RUNDOWN\\\"><entry><id>https://www.{{source}}.co.uk/tvandshowbiz/15386651/how-britney-spears-abuse-exposes-american-system/?id={{idPanel}}</id><published>2021-06-24T21:00:39.000Z</published><updated>2021-06-24T21:21:44.206Z</updated><author><name>Lucy Alderson</name></author><title>How Britney Spears becoming a victim</title><link href=\\\"https://www.{{source}}.co.uk/tvandshowbiz/15386651/how-britney-spears-abuse-exposes-american-system/?id={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/1445f3ccc63f07a0f2a52d46ff5114f2?combo4to3=1200\\\"></media:content></entry><entry><id>https://www.{{source}}.co.uk/tvandshowbiz/celebrities/15387794/britney-spears-sam-asghari-bizarre-cryptic-message-court-testimony/?id={{idPanel}}</id><published>2021-06-24T20:52:15.000Z</published><updated>2021-06-24T21:21:44.182Z</updated><author><name>Justin Lawrence</name></author><title>Britney Spears' boyfriend</title><link href=\\\"https://www.{{source}}.co.uk/tvandshowbiz/celebrities/15387794/britney-spears-sam-asghari-bizarre-cryptic-message-court-testimony/?id={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/135bd0313def4e35d0bc635d7b1f4b09?combo4to3=1200\\\"></media:content></entry><entry><id>https://www.{{source}}.co.uk/news/15371287/hunter-biden-latop-texts-prostitute-chateau-marmon-wife/?id={{idPanel}}</id><published>2021-06-25T13:00:34.000Z</published><updated>2021-06-25T13:21:42.492Z</updated><author><name>Felix Allen</name></author><title>Hunter Biden latest</title><link href=\\\"https://www.{{source}}.co.uk/news/15371287/hunter-biden-latop-texts-prostitute-chateau-marmon-wife/?id={{idPanel}}\\\"/><media:content url=\\\"https://content.capi-stage.newscorp.com/images/b868e7e6337462a4d0163fff285cfc36?combo4to3=1200\\\"></media:content></entry></g:article_group></entry>\",\n    \"user\": \"johndue@gmail.com\",\n    \"domain\": \"http://news-showcase-develop.showcase.newspress.app\",\n    \"originalArticle\": [\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"d8e41fab4a64d2f8b8cb3df45a07dd66\",\n        \"title\": \"How Britney Spears becoming a victim\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"df1eebc071e56405404fb0f7a2b02b79\",\n        \"title\": \"Britney Spears' boyfriend\"\n      },\n      {\n        \"mainArticle\": false,\n        \"gcapiId\": \"2618864b762942634533c63239abf2fe\",\n        \"title\": \"Hunter Biden latest\"\n      }\n    ]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ingestion-url}}/ingest/processors/GSHOWCASE",
+									"protocol": "https",
+									"host": [
+										"{{ingestion-url}}"
+									],
+									"path": [
+										"ingest",
+										"processors",
+										"GSHOWCASE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consume Complete Single Article",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"",
+											"    let responseData = pm.response.json();",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.expect(responseData[0].originId).to.eql(id+\"-\"+source);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/complete/GSHOWCASE/{{idPanel}}-{{source}}",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"complete",
+										"GSHOWCASE",
+										"{{idPanel}}-{{source}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generate Feed to GShowcase",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"    var id = pm.environment.get(\"idPanel\");",
+											"    var source = pm.environment.get(\"source\");",
+											"    var date = pm.environment.get(\"date\");",
+											"",
+											"",
+											"    var responseJson = xml2Json(responseBody);",
+											"    var idxml = responseJson[\"feed\"][\"entry\"][\"id\"];",
+											"    var datexml = responseJson[\"feed\"][\"updated\"];",
+											"",
+											"",
+											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.expect(idxml).to.contain(\"=\"+id);",
+											"    });",
+											"",
+											"    pm.test(\"Date updated is correct.\", function () {",
+											"    pm.expect(datexml).to.eq(date);",
+											"    });"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, [4000]);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{articles-api-key}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{articles-url}}/gshowcase?includeBody=true&maxitems=1&searchCategory=/{{source}}/publisher",
+									"protocol": "https",
+									"host": [
+										"{{articles-url}}"
+									],
+									"path": [
+										"gshowcase"
+									],
+									"query": [
+										{
+											"key": "includeBody",
+											"value": "true"
+										},
+										{
+											"key": "maxitems",
+											"value": "1"
+										},
+										{
+											"key": "searchCategory",
+											"value": "/{{source}}/publisher"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sort articles",
+			"item": [
+				{
+					"name": "Sort articles by dateLive",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/{{source}}?dateSort=dateLive",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"{{source}}"
+							],
+							"query": [
+								{
+									"key": "dateSort",
+									"value": "dateLive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort articles by dateCreated",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/{{source}}?dateSort=dateCreated",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"{{source}}"
+							],
+							"query": [
+								{
+									"key": "dateSort",
+									"value": "dateCreated"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort articles by dateUpdated",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/{{source}}?dateSort=dateUpdated",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"{{source}}"
+							],
+							"query": [
+								{
+									"key": "dateSort",
+									"value": "dateUpdated"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Query Number articles",
+			"item": [
+				{
+					"name": "Query Number of Articles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/total-assets",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"total-assets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Number of Articles fromDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/total-assets?fromDate=2021-07-01",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"total-assets"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-07-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Number of Articles toDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/total-assets?toDate=2021-07-01",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"total-assets"
+							],
+							"query": [
+								{
+									"key": "toDate",
+									"value": "2021-07-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Number of Articles between dates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/total-assets?fromDate=2021-07-27&toDate=2021-07-28",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"total-assets"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2021-07-27"
+								},
+								{
+									"key": "toDate",
+									"value": "2021-07-28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Number of Articles empty parameters",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{articles-url}}/total-assets?fromDate=&toDate=",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"total-assets"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": ""
+								},
+								{
+									"key": "toDate",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exploratory Test",
+			"item": [
+				{
+					"name": "Verify article update",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/shortform/{{source}}?dateSort=dateUpdated&maxitems=1",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"shortform",
+								"{{source}}"
+							],
+							"query": [
+								{
+									"key": "dateSort",
+									"value": "dateUpdated"
+								},
+								{
+									"key": "maxitems",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notifications",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"setTimeout(function(){}, [3000]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://content.capi-nonprod.newscorp.com/content/articles/gshowcase/notifications?channels=nypost",
+							"protocol": "https",
+							"host": [
+								"content",
+								"capi-nonprod",
+								"newscorp",
+								"com"
+							],
+							"path": [
+								"content",
+								"articles",
+								"gshowcase",
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "channels",
+									"value": "nypost"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consume Complete Single Article Copy 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"setTimeout(function(){}, [3000]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    var id = pm.environment.get(\"idPanel\");",
+									"    var source = pm.environment.get(\"source\");",
+									"",
+									"    let responseData = pm.response.json();",
+									"",
+									"",
+									"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+									"    pm.expect(responseData[0].originId).to.eql(id+\"-\"+source);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/GSHOWCASE/5-thesun",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"GSHOWCASE",
+								"5-thesun"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consume Single Article of GSHOWCASE (complete) Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/thesun/15780262",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"thesun",
+								"15780262"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Feed to GShowcase Copy 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/gshowcase?includeBody=true&maxitems=1&searchCategory=/thesun/publisher",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"gshowcase"
+							],
+							"query": [
+								{
+									"key": "includeBody",
+									"value": "true"
+								},
+								{
+									"key": "daysback",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "maxitems",
+									"value": "1"
+								},
+								{
+									"key": "searchCategory",
+									"value": "/thesun/publisher"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consume Single Article of GSHOWCASE (shortform)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/shortform/GSHOWCASE/61-thesun",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"shortform",
+								"GSHOWCASE",
+								"61-thesun"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consume Articles GSHOWCASE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/complete/GSHOWCASE/61-thesun",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"complete",
+								"GSHOWCASE",
+								"61-thesun"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Feed to GShowcase Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{articles-api-key}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{articles-url}}/gshowcase?includeBody=true",
+							"protocol": "https",
+							"host": [
+								"{{articles-url}}"
+							],
+							"path": [
+								"gshowcase"
+							],
+							"query": [
+								{
+									"key": "daysback",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "includeBody",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		}
+	]
+}
