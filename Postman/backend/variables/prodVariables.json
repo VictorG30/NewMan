@@ -1,0 +1,51 @@
+{
+	"id": "66346c9b-3855-40a0-8fac-3e236652f135",
+	"name": "PRODUCTION",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "content.capi.newscorp.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "consumption_api_key",
+			"value": "PTmMor3yxc8AYs53aChhtE1Ob5DYhwB4rzBmPHQ6",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "ingestion_api_key",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "source",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "date",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "idPanel",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "noItems",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-10-17T21:00:04.420Z",
+	"_postman_exported_using": "Postman/10.19.0"
+}

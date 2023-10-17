@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GNS Automated Testing" tests="34">
+  <testsuite id="0" hostname="https://content.capi.newscorp.com" package="Iteration 0->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:21.581" time="0.487" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 0->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.487"/>
+  </testsuite>
+  <testsuite id="1" hostname="https://content.capi.newscorp.com" package="Iteration 0->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:22.068" time="0.689" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 0->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="0.689"/>
+  </testsuite>
+  <testsuite id="2" hostname="https://content.capi.newscorp.com" package="Iteration 1->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:22.757" time="0.372" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 1->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.372"/>
+  </testsuite>
+  <testsuite id="3" hostname="https://content.capi.newscorp.com" package="Iteration 1->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:23.129" time="0.491" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 1->Production Smoke Test->Get articles" name="Last updated was 1 hours ago" time="0.491"/>
+  </testsuite>
+  <testsuite id="4" hostname="https://content.capi.newscorp.com" package="Iteration 2->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:23.620" time="0.572" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 2->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.572"/>
+  </testsuite>
+  <testsuite id="5" hostname="https://content.capi.newscorp.com" package="Iteration 2->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:24.192" time="0.395" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 2->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="0.395"/>
+  </testsuite>
+  <testsuite id="6" hostname="https://content.capi.newscorp.com" package="Iteration 3->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:24.587" time="0.539" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 3->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.539"/>
+  </testsuite>
+  <testsuite id="7" hostname="https://content.capi.newscorp.com" package="Iteration 3->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:25.126" time="2.122" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 3->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="2.122"/>
+  </testsuite>
+  <testsuite id="8" hostname="https://content.capi.newscorp.com" package="Iteration 4->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:27.248" time="0.536" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 4->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.536"/>
+  </testsuite>
+  <testsuite id="9" hostname="https://content.capi.newscorp.com" package="Iteration 4->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:27.784" time="0.904" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 4->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="0.904"/>
+  </testsuite>
+  <testsuite id="10" hostname="https://content.capi.newscorp.com" package="Iteration 5->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:28.688" time="0.669" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 5->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.669"/>
+  </testsuite>
+  <testsuite id="11" hostname="https://content.capi.newscorp.com" package="Iteration 5->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:29.357" time="0.598" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 5->Production Smoke Test->Get articles" name="Last updated was 6 hours ago" time="0.598"/>
+  </testsuite>
+  <testsuite id="12" hostname="https://content.capi.newscorp.com" package="Iteration 6->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:29.955" time="0.663" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 6->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.663"/>
+  </testsuite>
+  <testsuite id="13" hostname="https://content.capi.newscorp.com" package="Iteration 6->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:30.618" time="0.900" failures="1" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 6->Production Smoke Test->Get articles" name="Last updated was 122 hours ago" time="0.900">
+      <failure type="AssertionError" message="expected 122 to be at most 18">
+        <![CDATA[AssertionError: expected 122 to be at most 18
+   at Object.eval sandbox-script.js:1:2)]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite id="14" hostname="https://content.capi.newscorp.com" package="Iteration 7->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:31.518" time="0.482" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 7->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.482"/>
+  </testsuite>
+  <testsuite id="15" hostname="https://content.capi.newscorp.com" package="Iteration 7->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:32.000" time="0.624" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 7->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="0.624"/>
+  </testsuite>
+  <testsuite id="16" hostname="https://content.capi.newscorp.com" package="Iteration 8->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:32.624" time="0.801" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 8->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.801"/>
+  </testsuite>
+  <testsuite id="17" hostname="https://content.capi.newscorp.com" package="Iteration 8->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:33.425" time="0.379" failures="1" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 8->Production Smoke Test->Get articles" name="Last updated was 19 hours ago" time="0.379">
+      <failure type="AssertionError" message="expected 19 to be at most 18">
+        <![CDATA[AssertionError: expected 19 to be at most 18
+   at Object.eval sandbox-script.js:1:2)]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite id="18" hostname="https://content.capi.newscorp.com" package="Iteration 9->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:33.804" time="0.985" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 9->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.985"/>
+  </testsuite>
+  <testsuite id="19" hostname="https://content.capi.newscorp.com" package="Iteration 9->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:34.789" time="0.393" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 9->Production Smoke Test->Get articles" name="Last updated was 5 hours ago" time="0.393"/>
+  </testsuite>
+  <testsuite id="20" hostname="https://content.capi.newscorp.com" package="Iteration 10->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:35.182" time="0.514" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 10->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.514"/>
+  </testsuite>
+  <testsuite id="21" hostname="https://content.capi.newscorp.com" package="Iteration 10->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:35.696" time="0.292" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 10->Production Smoke Test->Get articles" name="Last updated was 2 hours ago" time="0.292"/>
+  </testsuite>
+  <testsuite id="22" hostname="https://content.capi.newscorp.com" package="Iteration 11->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:35.988" time="0.570" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 11->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.570"/>
+  </testsuite>
+  <testsuite id="23" hostname="https://content.capi.newscorp.com" package="Iteration 11->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:36.558" time="0.822" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 11->Production Smoke Test->Get articles" name="Last updated was 0 hours ago" time="0.822"/>
+  </testsuite>
+  <testsuite id="24" hostname="https://content.capi.newscorp.com" package="Iteration 12->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:37.380" time="0.452" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 12->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.452"/>
+  </testsuite>
+  <testsuite id="25" hostname="https://content.capi.newscorp.com" package="Iteration 12->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:37.832" time="0.557" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 12->Production Smoke Test->Get articles" name="Last updated was -1 hours ago" time="0.557"/>
+  </testsuite>
+  <testsuite id="26" hostname="https://content.capi.newscorp.com" package="Iteration 13->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:38.389" time="0.885" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 13->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.885"/>
+  </testsuite>
+  <testsuite id="27" hostname="https://content.capi.newscorp.com" package="Iteration 13->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:39.274" time="0.494" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 13->Production Smoke Test->Get articles" name="Last updated was 1 hours ago" time="0.494"/>
+  </testsuite>
+  <testsuite id="28" hostname="https://content.capi.newscorp.com" package="Iteration 14->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:39.768" time="0.543" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 14->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.543"/>
+  </testsuite>
+  <testsuite id="29" hostname="https://content.capi.newscorp.com" package="Iteration 14->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:40.311" time="0.433" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 14->Production Smoke Test->Get articles" name="Last updated was 1 hours ago" time="0.433"/>
+  </testsuite>
+  <testsuite id="30" hostname="https://content.capi.newscorp.com" package="Iteration 15->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:40.744" time="0.488" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 15->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.488"/>
+  </testsuite>
+  <testsuite id="31" hostname="https://content.capi.newscorp.com" package="Iteration 15->Production Smoke Test" name="Get articles" tests="1" timestamp="2023-10-17T15:20:41.232" time="0.142" failures="1" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 15->Production Smoke Test->Get articles" name="Last updated was 103 hours ago" time="0.142">
+      <failure type="AssertionError" message="expected 103 to be at most 18">
+        <![CDATA[AssertionError: expected 103 to be at most 18
+   at Object.eval sandbox-script.js:1:2)]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite id="32" hostname="https://content.capi.newscorp.com" package="Iteration 16->Production Smoke Test" name="Google's Feed" tests="1" timestamp="2023-10-17T15:20:41.374" time="0.540" failures="0" errors="0">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 16->Production Smoke Test->Google's Feed" name="Url is right for google pub." time="0.540"/>
+  </testsuite>
+  <testsuite id="33" hostname="https://content.capi.newscorp.com" package="Iteration 16->Production Smoke Test" name="Get articles" tests="0" timestamp="2023-10-17T15:20:41.914" time="0.266" failures="0" errors="1">
+    <properties>
+      <property name="idPanel" value="94"/>
+      <property name="source" value="codejam"/>
+      <property name="date" value=""/>
+      <property name="timeOut" value="60000"/>
+      <property name="noItems" value="40"/>
+      <property name="idDevBarrons" value=""/>
+      <property name="idQaBarrons" value=""/>
+      <property name="idDevMansionglobal" value=""/>
+      <property name="preprodNYPost" value=""/>
+      <property name="preprodDecider" value=""/>
+      <property name="preprodPageSix" value=""/>
+      <property name="idPanelBullets" value="100019"/>
+      <property name="idPanelKeyMoments" value="2000014"/>
+      <property name="idPanelRelatedArticles" value="30000015"/>
+      <property name="idPanelRundown" value="40000014"/>
+    </properties>
+    <testcase classname="Iteration 16->Production Smoke Test->Get articles" name="Tests">
+      <error type="TypeError" message="Cannot read properties of undefined (reading 'dateUpdated')">
+        <![CDATA[]]>
+      </error>
+    </testcase>
+  </testsuite>
+</testsuites>

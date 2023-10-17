@@ -1,0 +1,74 @@
+{
+	"id": "38c233d5-e64d-4b94-aba8-068d4dddac45",
+	"name": "Staging",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "content.capi-stage.newscorp.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "consumption_api_key",
+			"value": "JpsHr1pGuf521KouPnem248i1ctf7Hw9WvSD4t96",
+			"enabled": true
+		},
+		{
+			"key": "ingestion_api_key",
+			"value": "JpsHr1pGuf521KouPnem248i1ctf7Hw9WvSD4t96",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "uid",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "firebase_url",
+			"value": "https://us-central1-nchq-showcase-nprod-data.cloudfunctions.net/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "oktaToken",
+			"value": "eyJraWQiOiJwaVBDZUQ5Z1RwQlVzZFBBeDR3bVRFb3hsbEdpYzF5dHpwMGNKdERSWTRJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULjZHQ3huemhPWGxhVnNmbHEwQkpxSUNYVG9ZOHd5VG1hNFNfUDE1QzdzTDgiLCJpc3MiOiJodHRwczovL25ld3Njb3JwLm9rdGFwcmV2aWV3LmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE2ODU3Mjc3NDYsImV4cCI6MTY4NTczMTM0NiwiY2lkIjoiMG9hMWtienJnc2lhUWJVU1QwaDgiLCJ1aWQiOiIwMHUxMGk3N2lpZ1FzUUUzUzBoOCIsInNjcCI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiXSwiYXV0aF90aW1lIjoxNjg1NzI2NjQ2LCJzdWIiOiJ2Z2FyY2lhLmNvbnN1bHRhbnRAbmV3c2NvcnAuY29tIiwibmFtZSI6IkdhcmNpYSwgVmljdG9yIn0.O1zJC5GCyQ_Zuy1MSC8xm_Wr1vDw2aUSIWKzS6fvaR0vbucwMCThplMHuVU0KaMijPXxPl7OK-mOQsT1uV0zaPOCrZeAhJg6fRlbTprRUV8RkE3IuGB5AfspAMglxd9oM1LoLi0WpuudVdqW6uRkm8nx2mHdqJB3UtV6cOIkHI00HRNI_aTLW8TEMf-zwnCX1bszqaUc_1vMDAZ780dB6yT2W0ZlyyYZrka3ZSBSb2uoemEzW8u4hn6k4e5GAROEev0zfx71RVAU8PIiiKolQLU9WZuAE06bZACG6PQ_MY6TGKVF8A5CjYSx6vsX8eLc9YYeyGN122fS-shJjrKt2Q",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "firebaseToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "idSite",
+			"value": "testingSitePostman",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "noItems",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-10-17T20:59:22.124Z",
+	"_postman_exported_using": "Postman/10.19.0"
+}

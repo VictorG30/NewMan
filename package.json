@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html",
-    "API": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'"
+    "API": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'",
+    "stgSmokeTest": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'",
+    "prodSmokeTest": "npx newman run ./Postman/backend/collection/GNSAutomatedTesting.json -e ./Postman/backend/variables/prodVariables.json -g ./Postman/backend/variables/globalsVariables.json --folder 'Production Smoke Test' -d './data/sources.csv' --reporters xunit"
   },
   "author": "VictorG",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.25.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "newman": "^6.0.0",
+    "newman-reporter-xunit": "^2.4.4"
   }
 }
