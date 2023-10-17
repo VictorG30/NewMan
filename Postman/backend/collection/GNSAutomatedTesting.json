@@ -23,7 +23,7 @@
 											"    var id = pm.globals.get(\"idPanelBullets\");",
 											"    var source = pm.globals.get(\"source\");",
 											"    ",
-											"    console.log(id + '-' +source);"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -40,6 +40,7 @@
 											"",
 											"var numRandom = Math.round(Math.random() * 1000000000);",
 											"var idfin = a + numRandom;",
+											"console.log(\"Id created panel: \" + idfin)",
 											"pm.globals.set(\"idPanelBullets\", idfin);"
 										],
 										"type": "text/javascript"
@@ -89,7 +90,7 @@
 											"    var id = pm.globals.get(\"idPanelKeyMoments\");",
 											"    var source = pm.globals.get(\"source\");",
 											"    ",
-											"    console.log(id + '-' +source);"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -106,6 +107,7 @@
 											"",
 											"var numRandom = Math.round(Math.random() * 1000000000);",
 											"var idfin = a + numRandom;",
+											"console.log(\"Id created panel: \" + idfin)",
 											"pm.globals.set(\"idPanelKeyMoments\", idfin);"
 										],
 										"type": "text/javascript"
@@ -155,7 +157,7 @@
 											"    var id = pm.globals.get(\"idPanel\");",
 											"    var source = pm.globals.get(\"source\");",
 											"    ",
-											"    console.log(id + '-' +source);"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -172,6 +174,7 @@
 											"",
 											"var numRandom = Math.round(Math.random() * 1000000000);",
 											"var idfin = a + numRandom;",
+											"console.log(\"Id created panel: \" + idfin)",
 											"pm.globals.set(\"idPanelRelatedArticles\", idfin);"
 										],
 										"type": "text/javascript"
@@ -226,6 +229,7 @@
 											"",
 											"var numRandom = Math.round(Math.random() * 1000000000);",
 											"var idfin = a + numRandom;",
+											"console.log(\"Id created panel: \" + idfin)",
 											"pm.globals.set(\"idPanelRundown\", idfin);"
 										],
 										"type": "text/javascript"
@@ -238,7 +242,7 @@
 											"    var id = pm.globals.get(\"idPanel\");",
 											"    var source = pm.globals.get(\"source\");",
 											"    ",
-											"    console.log(id + '-' +source);"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -328,7 +332,7 @@
 											"    let responseData = pm.response.json();",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.test(\"ID is correct. \"+id+\"\", function () {",
 											"    pm.expect(responseData[0].originId).to.contain(id+\"-\"+source);",
 											"});"
 										],
@@ -385,7 +389,7 @@
 											"    let responseData = pm.response.json();",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.test(\"ID is correct. \"+id+\"\", function () {",
 											"    pm.expect(responseData[0].originId).to.contain(id+\"-\"+source);",
 											"});"
 										],
@@ -442,7 +446,7 @@
 											"    let responseData = pm.response.json();",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.test(\"ID is correct. \"+id+\"\", function () {",
 											"    pm.expect(responseData[0].originId).to.contain(id+\"-\"+source);",
 											"});"
 										],
@@ -499,7 +503,7 @@
 											"    let responseData = pm.response.json();",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct. \"+id+\"\", function () {",
+											"    pm.test(\"ID is correct. \"+id+\"\", function () {",
 											"    pm.expect(responseData[0].originId).to.contain(id+\"-\"+source);",
 											"});"
 										],
@@ -575,7 +579,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -648,7 +652,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -721,7 +725,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -794,7 +798,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -1392,7 +1396,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -1465,7 +1469,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -1538,7 +1542,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""
@@ -1611,7 +1615,7 @@
 											"    var datexml = responseJson[\"feed\"][\"updated\"];",
 											"",
 											"",
-											"    pm.test(\"Task ID is correct.\"+idxml+\"\", function () {",
+											"    pm.test(\"ID is correct.\"+idxml+\"\", function () {",
 											"    pm.expect(idxml).to.contain(\"=\"+id);",
 											"    });",
 											""

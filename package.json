@@ -6,7 +6,7 @@
   "scripts": {
     "testAPI": "npx newman run ./Postman/backend/collection/Todoist.postman_collection.json -e ./Postman/backend/variables/QA.postman_environment.json -r htmlextra --reporter-htmlextra-export ./Postman/backend/Reports/report.html",
     "API": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'",
-    "stgSmokeTest": "npx newman run ./Postman/backend/collection/GSHOWCASE.postman_collection.json -e ./Postman/backend/variables/DevFront.postman_environment.json --folder 'SmokeTest HappyPath'",
+    "stgSmokeTest": "npx newman run ./Postman/backend/collection/GNSAutomatedTesting.json -e ./Postman/backend/variables/stagingVariables.json -g ./Postman/backend/variables/globalsVariables.json --folder 'Staging Smoke Test' -d './data/sources.csv'",
     "prodSmokeTest": "npx newman run ./Postman/backend/collection/GNSAutomatedTesting.json -e ./Postman/backend/variables/prodVariables.json -g ./Postman/backend/variables/globalsVariables.json --folder 'Production Smoke Test' -d './data/sources.csv' --reporters xunit"
   },
   "author": "VictorG",
